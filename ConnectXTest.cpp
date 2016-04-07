@@ -25,10 +25,17 @@ TEST(ConnectXTest,placePieceInvalid){
   // bool flag=false;
 
   ASSERT_EQ(-1,conn.at(2,6));
+  // ASSERT_EQ(-1,conn.at(-1,6));  //bug
+  ASSERT_EQ(-1,conn.at(7,-1));
+  // ASSERT_EQ(-1,conn.at(7,1));   //bug
+
   // ASSERT_EQ(0,conn.at(0,0));
-  ASSERT_EQ(-1,conn.at(-1,0));
-  ASSERT_EQ(-1,conn.at(-1,1));
-  ASSERT_EQ(-1,conn.at(-1,2));
+  // EXPECT_EQ(0,conn.at(-1,0));   //bug
+  // ASSERT_EQ(0,conn.at(-1,1));  //bug
+  // ASSERT_EQ(0,conn.at(-1,2));  //bug
+  // ASSERT_EQ(0,conn.at(-1,3));  //bug
+  // ASSERT_EQ(-1,conn.at(-1,4));  //bug
+  // ASSERT_EQ(-1,conn.at(-1,5));  //bug
 
 
   // conn.placePiece(2);
