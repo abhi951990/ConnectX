@@ -13,4 +13,5 @@ Quiz 3 Bug Report
 	* Description:
 		The program should treat this value as out of bound and return invalid constant (-1).
 
-
+* The main Bug is the for loop from line:17 to line:24
+	* The value of i and j in for loop must be 1 instead of 0. The above two bugs are result of this bug.

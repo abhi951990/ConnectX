@@ -93,12 +93,59 @@ TEST(ConnectXTest, checkat){
 
 }
 
+TEST(ConnectXTest, checkconstructor){
+  ConnectX conn(-1,-3,3);
+  ASSERT_EQ(0,conn.at(0,0));
+  // conn.placePiece(-2);
+  // ASSERT_EQ(0,conn.at(0,0));
+
+  // ASSERT_EQ(-1,conn.at(-2,-1));
+  // conn.placePiece(3);
+  // ASSERT_EQ(2,conn.at(3,5));
+  // conn.placePiece(3);
+  // ASSERT_EQ(1,conn.at(3,4));
+
+}
+
+TEST(ConnectXTest, checkconstructor1){
+  ConnectX conn(5,-3,3);
+  ASSERT_EQ(0,conn.at(0,0));
+  // conn.placePiece(-2);
+  // ASSERT_EQ(0,conn.at(0,0));
+
+  // ASSERT_EQ(-1,conn.at(-2,-1));
+  // conn.placePiece(3);
+  // ASSERT_EQ(2,conn.at(3,5));
+  // conn.placePiece(3);
+  // ASSERT_EQ(1,conn.at(3,4));
+
+}
+
+TEST(ConnectXTest, checkconstructor2){
+  ConnectX conn(5,3,-3);
+  ASSERT_EQ(0,conn.at(0,0));
+  // conn.placePiece(-2);
+  // ASSERT_EQ(0,conn.at(0,0));
+
+  // ASSERT_EQ(-1,conn.at(-2,-1));
+  // conn.placePiece(3);
+  // ASSERT_EQ(2,conn.at(3,5));
+  // conn.placePiece(3);
+  // ASSERT_EQ(1,conn.at(3,4));
+
+}
+
+
 
 TEST(ConnectXTest,placePiece){
   ConnectX conn;
   // bool flag=false;
-  conn.placePiece(2);
+  conn.placePiece(-3);
+
+
+
   conn.placePiece(3);
+  conn.placePiece(2);
   conn.placePiece(3);
   conn.placePiece(2);
   conn.placePiece(3);
@@ -131,19 +178,7 @@ TEST(ConnectXTest,placePiece){
   conn.placePiece(5);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  conn.showBoard();
+  // conn.showBoard();
   ASSERT_EQ(2,conn.at(2,5));
 
   // ASSERT_TRUE(flag);
