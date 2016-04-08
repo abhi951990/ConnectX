@@ -20,14 +20,17 @@ TEST(ConnectXTest, sanityCheck)
 	ASSERT_TRUE(true);
 }
 
-TEST(ConnectXTest,placePieceInvalid){
+TEST(ConnectXTest,conditionCheckInvalid){
   ConnectX conn;
   // bool flag=false;
 
   ASSERT_EQ(-1,conn.at(2,6));
+
   // ASSERT_EQ(-1,conn.at(-1,6));  //bug
   ASSERT_EQ(-1,conn.at(7,-1));
   // ASSERT_EQ(-1,conn.at(7,1));   //bug
+  ASSERT_EQ(-1,conn.at(8,-1));
+  ASSERT_NE(-1,conn.at(2,2));
 
   // ASSERT_EQ(0,conn.at(0,0));
   // EXPECT_EQ(0,conn.at(-1,0));   //bug
@@ -41,6 +44,48 @@ TEST(ConnectXTest,placePieceInvalid){
   // conn.placePiece(2);
   // ASSERT_TRUE(flag);
 }
+
+TEST(ConnectXTest, conditionCheckEmpty){
+  ConnectX conn;
+
+  ASSERT_EQ(0,conn.at(0,0));
+  ASSERT_EQ(0,conn.at(6,5));
+  ASSERT_NE(0,conn.at(-2,3));
+
+}
+
+
+TEST(ConnectXTest, conditionCheckblack){
+  ConnectX conn;
+  ASSERT_NE(2,conn.at(2,5));
+  conn.placePiece(2);
+  ASSERT_EQ(2,conn.at(2,5));
+  ASSERT_NE(2,conn.at(-1,5));
+  ASSERT_NE(2,conn.at(-2,5));
+  conn.placePiece(3);
+  ASSERT_NE(2,conn.at(3,5));
+  conn.placePiece(4);
+  ASSERT_EQ(2,conn.at(4,5));
+}
+
+
+TEST(ConnectXTest,checkwhoseturn){
+  ConnectX conn;
+
+  ASSERT_EQ(2,conn.whoseTurn());
+  conn.placePiece(2);
+  ASSERT_NE(2,conn.whoseTurn());
+  ASSERT_EQ(1,conn.whoseTurn());
+  conn.placePiece(2);
+  ASSERT_EQ(2,conn.whoseTurn());
+}
+
+
+TEST(ConnectXTest, checkat){
+  ConnectX conn;
+
+}
+
 
 TEST(ConnectXTest,placePiece){
   ConnectX conn;
