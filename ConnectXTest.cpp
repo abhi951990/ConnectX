@@ -84,6 +84,13 @@ TEST(ConnectXTest,checkwhoseturn){
 TEST(ConnectXTest, checkat){
   ConnectX conn;
 
+  ASSERT_EQ(0,conn.at(0,0));
+  ASSERT_EQ(-1,conn.at(-2,-1));
+  conn.placePiece(3);
+  ASSERT_EQ(2,conn.at(3,5));
+  conn.placePiece(3);
+  ASSERT_EQ(1,conn.at(3,4));
+
 }
 
 
