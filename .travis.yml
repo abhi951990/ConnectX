@@ -1,4 +1,6 @@
 language: cpp
+
 compiler:
 -g++
-script: g++ ConnectX.cpp ConnectX.h
+
+script: g++ ConnectX.cpp ConnectX.h main.cpp
