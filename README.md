@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/abhi951990/ConnectX.svg?branch=master)](https://travis-ci.org/abhi951990/ConnectX)
+
+
 Abhinav Gupta
 
 Quiz 3 Bug Report
