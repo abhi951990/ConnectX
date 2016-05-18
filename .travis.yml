@@ -1,4 +1,4 @@
-language: c++
+language: cpp
 compiler:
-	-g++
-script: g++ ConnectX.cpp
+-g++
+script: g++ ConnectX.cpp ConnectX.h
